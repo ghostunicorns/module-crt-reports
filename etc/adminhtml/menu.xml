@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright © GhostUnicorns spa. All rights reserved.
+  ~ See LICENSE and/or COPYING.txt for license details.
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="GhostUnicorns_CrtReports::reports"
+             title="Crt"
+             translate="title"
+             module="GhostUnicorns_CrtReports"
+             sortOrder="5"
+             parent="Magento_Reports::report"
+             resource="GhostUnicorns_CrtReports::reports"/>
+
+        <add id="GhostUnicorns_CrtReports::reports_activity"
+             title="All Activities"
+             translate="title"
+             module="GhostUnicorns_CrtReports"
+             sortOrder="10"
+             parent="GhostUnicorns_CrtReports::reports"
+             action="crt_reports/reports/activity"
+             resource="GhostUnicorns_CrtReports::reports_activity"/>
+
+        <add id="GhostUnicorns_CrtReports::reports_entity"
+             title="All Entity"
+             translate="title"
+             module="GhostUnicorns_CrtReports"
+             sortOrder="20"
+             parent="GhostUnicorns_CrtReports::reports"
+             action="crt_reports/reports/entity"
+             resource="GhostUnicorns_CrtReports::reports_entity"/>
+    </menu>
+</config>
+

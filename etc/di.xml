@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright © GhostUnicorns spa. All rights reserved.
+  ~ See LICENSE and/or COPYING.txt for license details.
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="ghostunicorns_crt_reports_activity_data_source" xsi:type="string">
+                    GhostUnicorns\CrtReports\Model\ResourceModel\Activity\Grid\Collection\Virtual
+                </item>
+                <item name="ghostunicorns_crt_reports_entity_data_source" xsi:type="string">
+                    GhostUnicorns\CrtReports\Model\ResourceModel\Entity\Grid\Collection\Virtual
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="GhostUnicorns\CrtReports\Model\ResourceModel\Activity\Grid\Collection\Virtual"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">crt_activity</argument>
+            <argument name="resourceModel" xsi:type="string">
+                GhostUnicorns\CrtActivity\Model\ResourceModel\ActivityResourceModel
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="GhostUnicorns\CrtReports\Model\ResourceModel\Entity\Grid\Collection\Virtual"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">crt_entity</argument>
+            <argument name="resourceModel" xsi:type="string">
+                GhostUnicorns\CrtEntity\Model\ResourceModel\EntityResourceModel
+            </argument>
+        </arguments>
+    </virtualType>
+</config>
